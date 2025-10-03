@@ -82,6 +82,29 @@ footer {
   line-height: 1.6;
 }
 
+.download-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 20px;
+  background: #2575fc;       
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #1a5bcc;       
+  transform: translateY(-3px);
+}
+
+.download-btn:active {
+  background: #0f3c82;       
+  transform: translateY(0);
+}
+
+
 .about-image {
   flex: 0 0 220px; 
   display: flex;
