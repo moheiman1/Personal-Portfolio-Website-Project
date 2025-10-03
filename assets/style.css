@@ -50,3 +50,84 @@ footer {
     gap: 1rem;
   }
 }
+
+/* ----- About section: text + circular image ----- */
+#about {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* برای موبایل تصویر زیر متن می‌رود */
+}
+
+.about-text {
+  flex: 1 1 400px; /* اجازه می‌دهد متن کش بیاید */
+  min-width: 250px;
+}
+
+.about-text h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+}
+
+.about-text p {
+  color: #444;
+  line-height: 1.6;
+}
+
+/* عکس دایره‌ای */
+.about-image {
+  flex: 0 0 220px; /* اندازه اختصاصی برای عکس */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #2575fc; /* میتونی رنگشو عوض کنی */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* افکت کوچک هنگام هاور (اختیاری) */
+.about-photo:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.2);
+}
+
+/* ریسپانسیو: موبایل -> تصویر زیر متن و کوچکتر */
+@media (max-width: 800px) {
+  .about-container {
+    gap: 20px;
+  }
+  .about-image {
+    flex: 0 0 180px;
+    width: 100%;
+    justify-content: flex-start; /* اگر خواستی عکس وسط باشه از center استفاده کن */
+  }
+  .about-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    flex-direction: column-reverse; /* متن بالاتر، عکس زیر آن */
+    align-items: center;
+    text-align: center;
+  }
+  .about-image { justify-content: center; }
+  .about-text { width: 100%; }
+}
